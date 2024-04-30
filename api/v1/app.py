@@ -14,6 +14,7 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
 cors = CORS(app, resources={r"/api/*": {"origins": "0.0.0.0"}})
 
+
 @app.teardown_appcontext
 def close_db(obj):
     """ calls methods close() """
@@ -28,8 +29,8 @@ def page_not_foun(error):
 
 app.config['SWAGGER'] = {
     'title': 'AirBnB clone - RESTful API',
-    'description': 'This is the api that was created for the hbnb restful api project,\
-    all the documentation will be shown below',
+    'description': 'This is the api that was created for the hbnb \
+            restful api project, all the documentation will be shown below',
     'uiversion': 3}
 
 Swagger(app)
